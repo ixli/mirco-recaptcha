@@ -1,0 +1,16 @@
+{
+  "name": "mirco recaptcha",
+  "version": "0.0.1",
+  "description": " mirco recaptcha just like google recaptcha servers.",
+  "author": "kaidi.ren@upai.com",
+  "mail": "kaidi.ren@upai.com",
+  "dependencies": {
+    "express": "~4.0.0",
+    "static-favicon": "*",
+    "morgan": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "levelup": "*",
+    "leveldown": "*",
+  }
+}

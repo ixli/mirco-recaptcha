@@ -28,18 +28,9 @@ app.use(bodyParser());
 
 
 app.get('/', function(req, res){
-
-    code.GetImage(function(err,result){
-    res.set({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-})
     
-    res.send(pool.old);
-    pool.old = pool.new;
-    pool.new = result;
+    res.send("hello!");
 
-});
 });
 
 

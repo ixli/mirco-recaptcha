@@ -56,8 +56,8 @@ app.get('/img', function(req, res){
 
 
 app.get('/recaptcha.js', function(req, res){
-
-  	var rs = fs.createReadStream('./lib/recaptcha.js');
+    
+    var rs = fs.createReadStream('./lib/recaptcha.js');
     var data = '';
     rs.on("data", function(trunk){data += trunk;});
     rs.on("end", function(){res.end(data);});

@@ -1,6 +1,6 @@
-var crypto = require('crypto');
-var express = require('express');
-var fs = require('fs');
+var crypto = require('crypto'),
+	express = require('express'),
+	fs = require('fs');
 
 var bodyParser = require('body-parser');
 

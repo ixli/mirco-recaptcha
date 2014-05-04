@@ -5,8 +5,12 @@
   "author": "kaidi.ren@upai.com",
   "mail": "kaidi.ren@upai.com",
   "dependencies": {
-    "express": "~4.0.0",
-    "morgan": "*",
-    "body-parser": "*"
+    "body-parser": "^1.0.2",
+    "express": "^4.0.0",
+    "gm": "^1.14.2",
+    "json-bodyparser": "^0.1.0",
+    "level": "^0.18.0",
+    "leveldown": "^0.10.2",
+    "levelup": "^0.18.3"
   }
 }

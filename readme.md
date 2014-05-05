@@ -90,7 +90,7 @@ http://127.0.0.1:3000/verify
 |---|:---|:---:|---:|
 |ak|24位string|是|access key|
 |sk|32位string|是|secret key|
-|input_code|6位string|是|输入法的验证码值|
+|input_code|6位string|是|输入的验证码值|
 
 > 正常
 

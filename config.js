@@ -11,6 +11,5 @@ exports.session_secret = 'mirco_recaptcha';
 
 
 
-exports.db_path = './db/1';
-exports.img_path = './img/1';
+exports.db_path = './db';
 

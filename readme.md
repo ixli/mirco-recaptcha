@@ -32,9 +32,9 @@ api
 1.ak sk 获取
 
 method http get
-
+```
 http://127.0.0.1:3000/user/add?name=xxxxxxx
-
+```
 >
 |参数名|参数类型|是否必需|描述|
 |---|:---|:---:|---:|

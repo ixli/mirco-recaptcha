@@ -5,12 +5,12 @@ var bodyParser = require('body-parser'),
     express = require('express'),
     gm = require('gm');
 
-var db = require('./db.js');
-
+var db = require('./lib/db.js');
 
 
 var app = express();
 app.use(bodyParser());
+
 
 var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
@@ -44,10 +44,6 @@ app.get('/', function(req, res){
 });
 
 
-
-
-
-
 app.get('/image', function(req, res){
 
     var ak = req.query.ak;
@@ -56,13 +52,13 @@ app.get('/image', function(req, res){
         'Content-Type': 'image/png',
         'Access-Control-Allow-Origin': '*'
     })
-    
+
     var code = generateCode(6);
     db.httpGetImageMthod(ak, code);
     generateImage(res, code);
     console.log(code);
-   
-   });
+
+});
 
 
 app.post('/verify', function(req, res){
@@ -71,24 +67,16 @@ app.post('/verify', function(req, res){
         sk = req.body.sk || "",
         input_code = req.body.input_code || "";
 
-    
-    
     res.set({
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
     })
     
     db.verify(ak, sk, input_code, function(status){
-
         res.send(status);
+        });
 
-    });
-    
-    
-    })
-
-
-
+})
 
 
 app.listen(3000);

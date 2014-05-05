@@ -2,7 +2,7 @@
 
 仿Google reCAPTCHA
 
-### 依赖
+
 
 图像生成和处理模块
 

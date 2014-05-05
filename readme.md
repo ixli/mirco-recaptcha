@@ -11,13 +11,6 @@ sudo apt-get install graphicsmagick
 ```
 
 
-
-web 框架
-
-```
-npm install -g express
-```
-
 使用
 
 ```

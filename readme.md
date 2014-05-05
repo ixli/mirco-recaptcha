@@ -18,6 +18,7 @@ web 框架
 npm install -g express
 ```
 
+使用
 
 ```
 git clone http://gitlab.widget-inc.com/kaidi.ren/mirco-recaptcha.git
@@ -27,7 +28,7 @@ cd mirco-recaptcha
 npm install
 ```
 
-api
+# api
 
 1.ak sk 获取
 

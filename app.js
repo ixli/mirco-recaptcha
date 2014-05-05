@@ -78,7 +78,7 @@ app.post('/verify', function(req, res){
     
     db.verify(ak, sk, input_code, function(status){
         res.send(status);
-        });
+    });
 
 })
 

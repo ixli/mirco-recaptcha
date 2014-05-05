@@ -1,5 +1,4 @@
-var crypto = require('crypto'),
-    fs = require('fs');
+var fs = require('fs');
 
 var bodyParser = require('body-parser'),
     express = require('express'),
@@ -46,14 +45,19 @@ app.get('/', function(req, res){
 
 app.get('/image', function(req, res){
 
-    var ak = req.query.ak;
+    var ak = req.query.ak || "";
+    var code;
     console.log(ak);
     res.set({
         'Content-Type': 'image/png',
         'Access-Control-Allow-Origin': '*'
     })
-
-    var code = generateCode(6);
+    if (ak.length != 24){
+        code = "bad ak";
+    }
+    else{
+        code = generateCode(6);
+    }
     db.httpGetImageMthod(ak, code);
     generateImage(res, code);
     console.log(code);
@@ -78,6 +82,21 @@ app.post('/verify', function(req, res){
 
 })
 
+
+app.get('/user/add', function(req, res){
+
+    var name = req.query.name;
+    console.log(name);
+    res.set({
+        'Content-Type': 'application/json'
+    })
+    
+    db.httpAddUser(name, function(status){
+       res.send(status);
+       console.log(status); 
+    })
+
+});
 
 app.listen(3000);
 console.log('Listening on port 3000');

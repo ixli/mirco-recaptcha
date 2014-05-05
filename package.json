@@ -5,6 +5,7 @@
   "author": "kaidi.ren@upai.com",
   "mail": "kaidi.ren@upai.com",
   "dependencies": {
+    "async": "^0.7.0",
     "body-parser": "^1.0.2",
     "express": "^4.0.0",
     "gm": "^1.14.2",
@@ -12,5 +13,6 @@
     "level": "^0.18.0",
     "leveldown": "^0.10.2",
     "levelup": "^0.18.3"
-  }
+  },
+  "license": "MIT"
 }

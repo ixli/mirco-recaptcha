@@ -43,10 +43,10 @@ http://127.0.0.1:3000/user/add?name=xxxxxxx
 
 demo:
 
-request
+request：
+
 ```
 http://127.0.0.1:3000/user/add?name=kaidiren
-
 ```
 respone:
 

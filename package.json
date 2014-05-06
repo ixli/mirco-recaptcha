@@ -1,5 +1,5 @@
 {
-  "name": "mirco recaptcha",
+  "name": "mirco-recaptcha",
   "version": "0.0.1",
   "description": " mirco recaptcha just like google recaptcha servers.",
   "author": "kaidi.ren@upai.com",
@@ -14,5 +14,17 @@
     "leveldown": "^0.10.2",
     "levelup": "^0.18.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.widget-inc.com/kaidi.ren/mirco-recaptcha.git"
+  }
 }

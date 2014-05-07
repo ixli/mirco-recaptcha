@@ -21,6 +21,14 @@ cd mirco-recaptcha
 npm install
 ```
 
+test
+
+```
+cd mirco-recaptcha
+
+mocha
+
+```
 # api
 
 1.ak sk 获取
@@ -121,4 +129,53 @@ http://127.0.0.1:3000/verify
 {
 "status":"your ak not exist!"
 }
+```
+
+```
+
+├── app.js    运行文件
+├── db        db 文件
+├── demo
+│   └── demo.html   demo
+├── lib
+│   ├── db.js   name  ak sk 相关存储和处理
+│   └── recaptcha.js 逻辑部分
+├── LICENSE
+├── package.json
+├── readme.md
+├── scripts
+│   ├── useradd.js  添加用户脚本
+│   └── userdel.js  删除用户脚本
+└── test
+    └── app.js   测试用例
+    
+    
+```
+添加用户脚本使用说明
+```
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
+{ status: 'success',
+  info: 
+   { name: '123456',
+     ak: '86600096d0eda36521620d2d',
+     sk: '16e9058633d323ea5a0156c43432bd2a' } }
+```
+```
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
+{ status: 'fail',
+  info: 'your name exists ,please try another one!',
+  name: '123456',
+  ak: '3c4fb05d0b6e2c5bee8ea60a',
+  sk: '0c19c57e76300692dd8edabbd302d29b' }
+```
+添加用户脚本使用说明
+
+```
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
+{ status: 'delete user 123456 success!' }
+```
+```
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
+{ status: 'user not exists! can\'t del !' }
+
 ```

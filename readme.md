@@ -1,4 +1,4 @@
-# mirco-recaptcha  
+L# mirco-recaptcha  
 
 仿Google reCAPTCHA
 
@@ -152,6 +152,7 @@ http://127.0.0.1:3000/verify
     
 ```
 添加用户脚本使用说明
+
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
 { status: 'success',
@@ -160,6 +161,7 @@ kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
      ak: '86600096d0eda36521620d2d',
      sk: '16e9058633d323ea5a0156c43432bd2a' } }
 ```
+
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
 { status: 'fail',
@@ -168,12 +170,14 @@ kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
   ak: '3c4fb05d0b6e2c5bee8ea60a',
   sk: '0c19c57e76300692dd8edabbd302d29b' }
 ```
+
 添加用户脚本使用说明
 
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
 { status: 'delete user 123456 success!' }
 ```
+
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
 { status: 'user not exists! can\'t del !' }

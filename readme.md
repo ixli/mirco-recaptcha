@@ -1,4 +1,4 @@
-L# mirco-recaptcha  
+# mirco-recaptcha  
 
 仿Google reCAPTCHA
 
@@ -14,7 +14,7 @@ sudo apt-get install graphicsmagick
 使用
 
 ```
-git clone http://gitlab.widget-inc.com/kaidi.ren/mirco-recaptcha.git
+git clone https://github.com/ixli/mirco-recaptcha.git
 
 cd mirco-recaptcha
 

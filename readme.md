@@ -105,25 +105,35 @@ http://127.0.0.1:3000/verify
 "status":"your ak not exist!"
 }
 ```
+> rc 错误
+
+```
+{
+"status":"rc code is not right!"
+}
 
 ```
 
-├── app.js    运行文件
-├── db        db 文件
-├── demo
-│   └── demo.html   demo
+
+```
+
+├── app.js  运行文件
+├── db      db 文件
+├── demo    
+│   └── demo.html demo
 ├── lib
 │   ├── db.js   name  ak sk 相关存储和处理
-│   └── recaptcha.js 逻辑部分
+│   └── recaptcha.js  逻辑部分
 ├── LICENSE
 ├── package.json
 ├── readme.md
 ├── scripts
-│   ├── useradd.js  添加用户脚本
-│   └── userdel.js  删除用户脚本
+│   ├── adduser.js  添加用户脚本
+│   ├── deluser.js  删除用户脚本
+│   └── rc.js       random code 生成脚本
 └── test
-    └── app.js   测试用例
-    
+    └── app.js      测试用例
+
     
 ```
 添加用户脚本使用说明 用于获取 ak sk

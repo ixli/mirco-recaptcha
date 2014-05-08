@@ -47,11 +47,12 @@ describe('User test!', function(){
     });
   
   
-    it('# del user user!', function(done){
+    it('# del exist user!', function(done){
         add_user("rkdrkd3", function(status){
             if (status.status == 'success' || status.info.name == 'rkdrkd3'){
                 del_user('rkdrkd3', function(status){
-                    status.should.have.property('status','delete user rkdrkd3 success!');
+                    status.should.have.property('status','success');
+                    status.should.have.property('info','delete user rkdrkd3 success!');
                     done();
                 });
             }
@@ -95,7 +96,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','ok');
+            res.body.should.have.property('status','success');
         });
     });
 
@@ -109,7 +110,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','input code is not right!');
+            res.body.should.have.property('info','input code is not right!');
         });
     });
     
@@ -124,7 +125,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','your ak not exist!');
+            res.body.should.have.property('info','your ak not exist!');
         });
     });
     
@@ -138,7 +139,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','your ak is invalid!');
+            res.body.should.have.property('info','your ak is invalid!');
         });
     });
     
@@ -152,7 +153,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','ak and sk are not matching! access deny!');
+            res.body.should.have.property('info','ak and sk are not matching! access deny!');
         });
     });    
     
@@ -167,7 +168,7 @@ describe('code get and verify test', function(){
         .end(function(err,res){
             if(err) return done(err);
             done();
-            res.body.should.have.property('status','rc code is not right!');
+            res.body.should.have.property('info','rc code is not right!');
         });
     });
     

@@ -79,7 +79,8 @@ http://127.0.0.1:3000/verify
 
 ```
 {
-"status":"ok"
+"status":"success",
+"info":"ok!"
 }
 ```
 
@@ -87,7 +88,8 @@ http://127.0.0.1:3000/verify
 
 ```
 {
-"status":"input code is not right!"
+"status":"fail",
+"info":"input code is not right!"
 }
 ```
 
@@ -95,21 +97,24 @@ http://127.0.0.1:3000/verify
 
 ```
 {
-"status":"access deny!"
+"status":"fail",
+"info":"ak and sk are not matching! access deny!"
 }
 ```
 > ak 错误
 
 ```
 {
-"status":"your ak not exist!"
+"status":"fail",
+"info":"your ak not exist!"
 }
 ```
 > rc 错误
 
 ```
 {
-"status":"rc code is not right!"
+"status":"fail",
+"info":"rc code is not right!"
 }
 
 ```
@@ -139,33 +144,34 @@ http://127.0.0.1:3000/verify
 添加用户脚本使用说明 用于获取 ak sk
 
 ```
-kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node adduser.js rkdrkd
 { status: 'success',
   info: 
-   { name: '123456',
-     ak: '86600096d0eda36521620d2d',
-     sk: '16e9058633d323ea5a0156c43432bd2a' } }
+   { name: 'rkdrkd',
+     ak: '67e15f9e0888dc190f2cfdcb',
+     sk: 'ebe561bbd58a6de5a8571d9a06b36d74' } }
 ```
 
 ```
-kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node adduser.js rkdrkd
 { status: 'fail',
-  info: 'your name exists ,please try another one!',
-  name: '123456',
-  ak: '3c4fb05d0b6e2c5bee8ea60a',
-  sk: '0c19c57e76300692dd8edabbd302d29b' }
+  info: 
+   { more: 'your name exists ,please try another one!',
+     name: 'rkdrkd',
+     ak: '67e15f9e0888dc190f2cfdcb',
+     sk: 'ebe561bbd58a6de5a8571d9a06b36d74' } }
 ```
 
  删除用户脚本使用说明
 
 ```
-kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
-{ status: 'delete user 123456 success!' }
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node deluser.js rkdrkd
+{ status: 'success', info: 'delete user rkdrkd success!' }
 ```
 
 ```
-kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
-{ status: 'user not exists! can\'t del !' }
+kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node deluser.js rkdrkd
+{ status: 'fail', info: 'user not exists! can\'t del !' }
 
 ```
 

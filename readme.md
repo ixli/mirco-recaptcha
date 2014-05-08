@@ -31,46 +31,20 @@ mocha
 ```
 # api
 
-1.ak sk 获取
 
-method http get
-
-```
-http://127.0.0.1:3000/user/add?name=xxxxxxx
-```
-
->
-|参数名|参数类型|是否必需|描述|
-|---|:---|:---:|---:|
-|name|string|是|用户名 长度6-16由数字和26个小写字母组成|
-
-
-demo:
-
-request：
-
-```
-http://127.0.0.1:3000/user/add?name=kaidiren
-```
-respone:
-
-```
-{"status":"success","info":{"name":"kaidiren","ak":"2e20dde6b649703e12464612","sk":"8d817408d1b092ce656dd585cead1d7e"}}
-```
-
-
-2.获取验证码图片
+1.获取验证码图片
 
 method http  get
 
 ```
-http://127.0.0.1:3000/image?ak=xxxxxxxxxxxx
+http://127.0.0.1:3000/image?ak=620e0e7814c9121eef8ada56&rc=1a2b3c
 ```
 
 >
 |参数名|参数类型|是否必需|描述|
 |---|:---|:---:|---:|
 |ak|24位string|是|access key|
+|rc|6位string|是|random code,用户自己随机生成，或者使用scripts/rc.js 生成|
 
 
 demo
@@ -81,14 +55,14 @@ demo
 </head>
   
 <body>
-<img src="http://127.0.0.1:3000/image?ak=ecd302144157775dc075bded"/>
+<img src="http://127.0.0.1:3000/image?ak=ecd302144157775dc075bded?rc=a1b2c3"/>
 
 </body>
 </html>
 ```
 
 
-3.验证输入验证码
+2.验证输入验证码
 method http  post
 
 ```
@@ -151,7 +125,7 @@ http://127.0.0.1:3000/verify
     
     
 ```
-添加用户脚本使用说明
+添加用户脚本使用说明 用于获取 ak sk
 
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
@@ -171,7 +145,7 @@ kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node useradd.js 123456
   sk: '0c19c57e76300692dd8edabbd302d29b' }
 ```
 
-添加用户脚本使用说明
+ 删除用户脚本使用说明
 
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456

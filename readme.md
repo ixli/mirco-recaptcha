@@ -72,6 +72,7 @@ http://127.0.0.1:3000/verify
 |---|:---|:---:|---:|
 |ak|24位string|是|access key|
 |sk|32位string|是|secret key|
+|rc|6位string|是|random code 必须和url里的保持一致|
 |input_code|6位string|是|输入的验证码值|
 
 > 正常
@@ -155,5 +156,16 @@ kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
 ```
 kaidiren@upyun:~/node/gitlab/mirco-recaptcha/scripts$ node userdel.js 123456
 { status: 'user not exists! can\'t del !' }
+
+```
+
+rc.js
+
+```
+var rc = require('./rc.js');
+rc(function(res){console.log(res)});
+```
+```
+FuKUkz  :random code
 
 ```
